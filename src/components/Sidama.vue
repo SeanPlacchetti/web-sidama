@@ -1,14 +1,13 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>{{ msg }}</h1>
     <h2>Users</h2>
-    <ul v-for="user in users" v-bind:key="user.user_id">
-      <li>
+    <div v-for="user in users" v-bind:key="user.user_id">
+      <div>
         {{user.username}} -- {{user.email}}
-      </li>
-    </ul>
+      </div>
+    </div>
     <div>
-
     </div>
   </div>
 </template>
@@ -18,7 +17,7 @@ import axios from 'axios'
 export default {
   name: 'Sidama',
   created: function () {
-    axios.get('/api/country/')
+    axios.get('/api/countries/')
       .then((response) => {
         this.countries = response.data
       })
@@ -31,22 +30,8 @@ export default {
     return {
       countries: [],
       users: [],
-      msg: 'Sidama!'
+      msg: 'Welcome to Sidama!'
     }
   }
 }
 </script>
-
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-</style>

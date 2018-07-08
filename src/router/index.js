@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Sidama from '@/components/HelloWorld'
+import Sidama from '@/components/Sidama'
 
 Vue.use(Router)
 
